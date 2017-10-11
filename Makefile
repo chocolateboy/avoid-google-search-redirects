@@ -15,5 +15,22 @@
 # You should have received a copy of the GNU General Public License
 # along with Avoid Google Search redirects.If not, see <http://www.gnu.org/licenses/>.
 
+PERCENT := %
+
 build:
 	zip ../avoid-google-search-redirects.zip -FS -r *
+
+# Look only for country related root TLD
+# Suppose that the iana URL give one line by domain with something like <span class="domain tld"><a>.root</a>
+get-google-urls:
+	curl --silent 'https://www.iana.org/domains/root/db' | \
+		grep 'country-code' -B2 | \
+		grep 'class="domain tld"' | grep '>\.\w*<\/a>' -o | sed  's/<\/a>//' | sed 's/>//' | \
+		xargs -I '{}' /bin/bash -c "if openssl s_client -showcerts --servername www.google{} --connect www.google{}:443 </dev/null 2>&1 | grep --quiet 'depth=0 C = US, ST = California, L = Mountain View, O = Google Inc'; then curl -Ls -o /dev/null -w '$(PERCENT){url_effective}\r\n' -A 'Mozilla/5.0' 'https://www.google{}' >>extern/google.urls ; sleep 5 ; fi"
+
+get-google-matches:
+	# Exceptions are manually found by clicking on ever link in extern/google.urls
+	egrep -v "(ai.google|google.do|google.gd|google.io|google.kr|google.ph|google.sg|google.tw)" extern/google.urls |\
+		sed 's/^https\?/\\"*/' | sed 's/?.*$$//' | sed 's=/\s*$$=/*\\",=' | \
+		sort -u | \
+		xargs | sed 's/,\s*$$//' >extern/google.matches
