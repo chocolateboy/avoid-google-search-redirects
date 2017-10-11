@@ -17,9 +17,6 @@
  * along with Avoid Google Search redirects.If not, see <http://www.gnu.org/licenses/>.
  */
 
-currentURL = new URL(window.location.href)
-
-if (window.wrappedJSObject.rwt
-    && currentURL.hostname.match(/\.google\.[^\.]+$/)) {
+if (window.wrappedJSObject.rwt) {
     window.wrappedJSObject.rwt = exportFunction(function() { }, window);
 }
