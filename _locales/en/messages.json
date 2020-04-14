@@ -3,9 +3,9 @@
         "description": "Name of the extension.",
         "message": "Avoid Google Search redirects"
     },
-    
+
     "extensionDescription": {
         "description": "Description of the extension (less than 250 characters).",
-        "message": "This add-on avoids Google Search to track your clicks on result links.\r\nThis principle is to disable a JavaScript code sent by Google which rewrites target links."
+        "message": "This add-on prevents Google Search tracking you with redirect links."
     }
 }
