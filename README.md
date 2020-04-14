@@ -1,38 +1,92 @@
-# Avoid Google Search redirects
+# Google Direct
 
-[![Firefox Version](https://img.shields.io/amo/v/avoid-google-search-redirects.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/avoid-google-search-redirects/)
+<!-- [![Build Status](https://secure.travis-ci.org/chocolateboy/google-direct.svg)](http://travis-ci.org/chocolateboy/google-direct) -->
+<!-- [![Firefox Version](https://img.shields.io/amo/v/google-direct.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/google-direct/) -->
 
-## Description
+<!-- toc -->
 
-This add-on prevents Google Search tracking you with redirect links. Rather
-than detecting and repairing the intercepted links, which can be complex and
-fragile, it disables the JavaScript function which Google uses to rewrite the
-links.
+- [NAME](#name)
+- [INSTALLATION](#installation)
+- [DESCRIPTION](#description)
+  - [Why?](#why)
+  - [Screenshots](#screenshots)
+    - [Before (Intercepted Link)](#before-intercepted-link)
+    - [After (Direct Link)](#after-direct-link)
+- [COMPATIBILITY](#compatibility)
+- [CREDITS](#credits)
+- [SEE ALSO](#see-also)
+- [VERSION](#version)
+- [AUTHORS](#authors)
+- [LICENSE](#license)
 
-### Details
+<!-- tocstop -->
 
-When you hover over a Google Search result, the target link seems to be the
-right one but when you click on this link, the target is replaced with a link
-to a Google tracker, which is used to record the external links you visit.
+## NAME
 
-To achieve this, Google Search uses an `onmousedown` event on result links.
-This event rewrites the target link by using a function called `rwt`. This
-add-on simply replaces this `rwt` function with an empty function, so nothing
-happens on click and you go directly to the result.
+Google Direct - remove tracking links from Google Search results
 
-The original idea comes from the
+## INSTALLATION
+
+- [AMO](https://addons.mozilla.org/firefox/addon/google-direct/)
+
+## DESCRIPTION
+
+This is a Firefox addon which removes tracking from Google Search results by
+disabling the JavaScript function which rewrites links when clicked.
+
+### Why?
+
+There are many addons which do this, but most do so by detecting links,
+disabling their event handlers, and restoring their URLs, which can be fragile
+and fiddly. Typically these addons are dozens or even hundreds of lines long
+and have to be updated each time the HTML changes.
+
+In contrast, this addon just disables the `window.rwt` function which is used
+to hijack external links, so the implementation is much simpler (effectively
+just a single line) and the protection is much more reliable as the same
+tracking technique has been used unchanged for years.
+
+### Screenshots
+
+#### Before (Intercepted Link)
+
+[![Intercepted Link](https://i.imgur.com/CDmyLE9.png)](https://i.imgur.com/CDmyLE9.png)
+
+#### After (Direct Link)
+
+[![Direct Link](https://i.imgur.com/ld1NUS6.png)](https://i.imgur.com/ld1NUS6.png)
+
+## COMPATIBILITY
+
+- Firefox 57+ (Desktop)
+
+## CREDITS
+
+This addon is a fork/rewrite of
+[Avoid Google Search redirects](https://github.com/Trim/avoid-google-search-redirects)
+by [Adrien Dorsaz](https://github.com/Trim), which
+[no longer works](https://github.com/Trim/avoid-google-search-redirects/pull/4),
+and that addon is a Firefox version of the Chrome addon,
 [Remove Google Redirect in Google Results](https://chrome.google.com/webstore/detail/remove-google-redirect-in/miaghkkhkjklnijffegcpjlhdjelnkke)
-add-on.
+by [hq6](https://github.com/hq6).
 
-This add-on is packaged as a WebExtension and so is compatible with Firefox 57+ (November 2017).
+## SEE ALSO
 
-## Report issues, improvements
+- [anti_rwt](https://github.com/raffaeleflorio/anti_rwt) - a Web Extension which uses the same technique as this addon (not on AMO)
+- [DeGoogle For Chrome](https://github.com/hq6/DeGoogle_Chrome) - the original inspiration for Avoid Google Search redirects ([Chrome Web Store version](https://chrome.google.com/webstore/detail/remove-google-redirect-in/miaghkkhkjklnijffegcpjlhdjelnkke))
+  - [DeGoogle For Firefox](https://github.com/hq6/DeGoogle_Firefox) - Firefox version (no longer available on AMO)
+- [google-redirect-rewrite-remove](https://addons.mozilla.org/en-US/firefox/addon/google-redirect-rewrite-remove/) - uses the same technique as this add-on, but in a less robust way
 
-Source code can be found on GitHub: https://github.com/Trim/avoid-google-search-redirects
+## VERSION
 
-You can use this repository to open issues and feature requests.
+0.0.1
 
-## See Also
+## AUTHORS
 
-- [google-redirect-rewrite-remove](https://addons.mozilla.org/en-US/firefox/addon/google-redirect-rewrite-remove/) - uses a similar technique to this add-on, but in a less robust way
-- [Remove Google Redirect in Google Results](https://chrome.google.com/webstore/detail/remove-google-redirect-in/miaghkkhkjklnijffegcpjlhdjelnkke) - the original inspiration for this add-on
+- [Adrien Dorsaz](https://github.com/Trim) (original version)
+- [chocolateboy](mailto:chocolate@cpan.org)
+
+## LICENSE
+
+This addon is free software; you can redistribute and/or modify it under the
+terms of the [GPL](http://www.gnu.org/copyleft/gpl.html).

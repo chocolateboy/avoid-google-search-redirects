@@ -1,19 +1,17 @@
-IGNORE := build dev Makefile
-
 build: script.js
-	web-ext build --overwrite-dest --ignore-files $(IGNORE)
+	web-ext build --config ./build/build.js --overwrite-dest
 
 clean:
 	rm -rf ./web-ext
 
 rebuild: clean build
 
-build-dir:
-	@mkdir -p build
-
-get-google-matches: build-dir
+get-google-matches:
 	curl --silent 'https://www.google.com/supported_domains'                                          \
 		| jq --raw-input --slurp 'split("\n") | map(select(. != "")) | map("*://www" + . + "/*")' \
 		> ./build/google-matches.json
+
+update-matches: get-google-matches
+	node ./build/merge.js | sponge manifest.json
 
 .PHONY: build

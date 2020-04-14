@@ -1,11 +1,15 @@
 {
     "manifest_version": 2,
-    "name": "__MSG_extensionName__",
-    "version": "2.0.0",
-    "author": "Adrien Dorsaz",
-    "homepage_url": "https://github.com/Trim/avoid-google-search-redirects",
-    "default_locale": "en",
-    "description": "__MSG_extensionDescription__",
+    "name": "Google Direct",
+    "version": "0.0.1",
+    "author": "chocolateboy",
+    "homepage_url": "https://github.com/chocolateboy/google-direct",
+    "description": "Remove tracking links from Google Search results",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "google-direct@chocolatey.com"
+        }
+    },
     "content_scripts": [
         {
             "matches": [
