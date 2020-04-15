@@ -1,7 +1,7 @@
 # Google Direct
 
 <!-- [![Build Status](https://secure.travis-ci.org/chocolateboy/google-direct.svg)](http://travis-ci.org/chocolateboy/google-direct) -->
-<!-- [![Firefox Version](https://img.shields.io/amo/v/google-direct.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/google-direct/) -->
+[![Firefox Version](https://img.shields.io/amo/v/google-direct.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/google-direct/)
 
 <!-- toc -->
 
@@ -44,7 +44,7 @@ and have to be updated each time the HTML changes.
 In contrast, this addon just disables the `window.rwt` function which is used
 to hijack external links, so the implementation is much simpler (effectively
 just a single line) and the protection is much more reliable as the same
-tracking technique has been used unchanged for years.
+tracking technique has been used unchanged for [years](https://security.stackexchange.com/a/126403).
 
 ### Screenshots
 
