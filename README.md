@@ -1,6 +1,6 @@
 # Google Direct
 
-<!-- [![Build Status](https://secure.travis-ci.org/chocolateboy/google-direct.svg)](http://travis-ci.org/chocolateboy/google-direct) -->
+<!-- [![Build Status](https://travis-ci.org/chocolateboy/google-direct.svg)](https://travis-ci.org/chocolateboy/google-direct) -->
 [![Firefox Version](https://img.shields.io/amo/v/google-direct.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/google-direct/)
 
 <!-- toc -->
@@ -89,4 +89,4 @@ by [hq6](https://github.com/hq6).
 ## LICENSE
 
 This addon is free software; you can redistribute and/or modify it under the
-terms of the [GPL](http://www.gnu.org/copyleft/gpl.html).
+terms of the [GPL](https://www.gnu.org/copyleft/gpl.html).
