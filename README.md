@@ -1,9 +1,8 @@
 # Google Direct
 
-<!-- [![Build Status](https://travis-ci.org/chocolateboy/google-direct.svg)](https://travis-ci.org/chocolateboy/google-direct) -->
 [![Firefox Version](https://img.shields.io/amo/v/google-direct.svg?style=popout&logo=mozilla%20firefox&colorB=green)](https://addons.mozilla.org/firefox/addon/google-direct/)
 
-<!-- toc -->
+<!-- TOC -->
 
 - [NAME](#name)
 - [INSTALLATION](#installation)
@@ -19,7 +18,7 @@
 - [AUTHORS](#authors)
 - [LICENSE](#license)
 
-<!-- tocstop -->
+<!-- TOC END -->
 
 ## NAME
 
@@ -41,10 +40,11 @@ disabling their event handlers, and restoring their URLs, which can be fragile
 and fiddly. Typically these addons are dozens or even hundreds of lines long
 and have to be updated each time the HTML changes.
 
-In contrast, this addon just disables the `window.rwt` function which is used
+By contrast, this addon just disables the `window.rwt` function which is used
 to hijack external links, so the implementation is much simpler (effectively
 just a single line) and the protection is much more reliable as the same
-tracking technique has been used unchanged for [years](https://security.stackexchange.com/a/126403).
+tracking technique has been used unchanged for
+[years](https://security.stackexchange.com/a/126403).
 
 ### Screenshots
 
