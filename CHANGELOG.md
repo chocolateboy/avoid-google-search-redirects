@@ -2,6 +2,6 @@
 
 - pre-empt the function rather than replacing it
 
-## 0.0.1 - 2020-04-14
+## 0.0.1 - 2020-04-15
 
 - initial release
