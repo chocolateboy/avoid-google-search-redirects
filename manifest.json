@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Google Direct",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "author": "chocolateboy",
     "homepage_url": "https://github.com/chocolateboy/google-direct",
     "description": "Remove tracking links from Google Search results",

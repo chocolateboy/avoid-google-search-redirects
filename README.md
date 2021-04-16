@@ -79,7 +79,7 @@ by [hq6](https://github.com/hq6).
 
 ## VERSION
 
-0.0.1
+1.0.0
 
 ## AUTHORS
 
