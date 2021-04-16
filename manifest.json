@@ -12,6 +12,8 @@
     },
     "content_scripts": [
         {
+            "run_at": "document_start",
+            "js": ["script.js"],
             "matches": [
                 "*://www.google.com/*",
                 "*://www.google.ad/*",
@@ -203,9 +205,6 @@
                 "*://www.google.co.zm/*",
                 "*://www.google.co.zw/*",
                 "*://www.google.cat/*"
-            ],
-            "js": [
-                "script.js"
             ]
         }
     ]
